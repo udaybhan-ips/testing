@@ -11,7 +11,7 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 const CustomCard = (props) =>{
  return(
      <>
-     <Card sx={{ maxWidth: 345 }} style={{'margin-right':'30px'}}>
+     <Card sx={{ maxWidth: 345 }} style={{'marginRight':'30px'}}>
       <CardActionArea>
         <CardMedia
           component="img"

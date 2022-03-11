@@ -1,12 +1,21 @@
 import React from "react";
 import HomePage from "../components/homePage";
+import { useEffect } from "react";
 import {
     BrowserRouter,
     Routes,
     Route,
   } from "react-router-dom";
 
-const App = () =>{
+import {getImagesAction} from '../data/actions/index'
+import { connect } from "react-redux";
+
+const App = ({dispatch}) =>{
+
+  useEffect(()=>{
+    dispatch(getImagesAction.getImages());
+  },[])
+
     return (
         <BrowserRouter>
           <Routes>
@@ -17,4 +26,10 @@ const App = () =>{
     )
 }
 
-export default App;
+const mapStateToProps = (state) =>{
+  return{
+    state
+  }
+} 
+
+export default connect(mapStateToProps)(App);
